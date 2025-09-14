@@ -23,19 +23,23 @@ const playList = [
 },
 {
  author: "JIMI HENDRIX",
- song:"ALL ALONG THE WATCHTOWER"
+ song:"ALL ALONG THE WATCHTOWER",
+ liric:"ALL ALONG THE WATCHTOWER"
 },
 {
  author: "AC/DC",
- song:"BACK IN BLACK"
+ song:"BACK IN BLACK",
+ liric:"BACK IN BLACK"
 },
 {
  author: "QUEEN",
- song:"WE WILL ROCK YOU"
+ song:"WE WILL ROCK YOU",
+ liric:"WE WILL ROCK YOU"
 },
 {
  author: "METALLICA",
- song:"ENTER SANDMAN"
+ song:"ENTER SANDMAN",
+ liric:"ENTER SANDMAN"
 }
 ];
 
@@ -59,12 +63,35 @@ for (let i = 0; i < playList.length; i++) {
 renderPlayList();
 
 
-const btn = document.querySelector('.btn');
+const btn = document.querySelectorAll('.btn');
 
-btn.addEventListener('click', () => {
+btn.forEach((item) => {
+    item.addEventListener('click', () => {
+        const modal = document.querySelector('.modal');
+        const modalContent = document.querySelector('.modal-content');
+
+        modal.style.display = 'flex';
+        modalContent.style.display = 'block';
+        modalContent.innerHTML = `<span class="close">&times;</span>
+            <p class="author">Author</p>
+            <p class="song">Song</p>
+            <p class="liric">Liric</p>`;
+
+            const close = document.querySelector('.close');
+            close.addEventListener('click', () => {
+    console.log('close');
     const modal = document.querySelector('.modal');
-    const modalContent = document.querySelector('.modal-content');
-    const close = document.querySelector('.close');
-    modal.style.display = 'flex';
-    modalContent.style.display = 'block';
+        const modalContent = document.querySelector('.modal-content');
+        modal.style.display = 'none';
+})
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    })
+    });
 });
+
+
+
