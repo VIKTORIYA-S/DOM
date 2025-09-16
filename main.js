@@ -59,6 +59,8 @@ for (let i = 0; i < playList.length; i++) {
     button.textContent = 'Відкрити';
     ol.insertAdjacentElement('beforeend', li);
     li.insertAdjacentElement('beforeend', button);
+    playList[i]['liric'] = 'Текст пісні...';
+    console.log(playList);
 }}
 renderPlayList();
 
@@ -83,9 +85,9 @@ btn.forEach((item) => {
         modalList.appendChild(modalLi);
 
         modalLi.innerHTML = `<button class="close">Закрити</button>
-            <p class="author">Author</p>
-            <p class="song">Song</p>
-            <p class="liric">Liric (Здесь должен быть текст...)</p>`;
+            <p class="author">Author: ${playList[0]['author']}</p>
+            <p class="song">Song: ${playList[0]['song']}</p>
+            <p class="liric">Liric:  ${playList[0]['liric']}(Здесь должен быть текст...)</p>`;
 
             const close = document.querySelector('.close');
             close.addEventListener('click', () => {
