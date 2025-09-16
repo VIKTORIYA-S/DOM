@@ -94,11 +94,11 @@ span {
 }
 
 .close {
-    width: 16px;
-    height: 16px;
-    color: #fff;
+    padding: 5px 20px;
+    color: #fdfbfb;
+    background-color: #440458;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
     cursor: pointer;
+    outline: none;
+    border-radius: 5px;
 }

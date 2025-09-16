@@ -72,10 +72,20 @@ btn.forEach((item) => {
 
         modal.style.display = 'flex';
         modalContent.style.display = 'block';
-        modalContent.innerHTML = `<span class="close">&times;</span>
+
+        const modalList = document.createElement('ol');
+        ol.classList.add('modal__list');
+        modalContent.appendChild(modalList);
+        console.log(modalList);
+
+        const modalLi = document.createElement('li');
+        modalLi.classList.add('modal__item');
+        modalList.appendChild(modalLi);
+
+        modalLi.innerHTML = `<button class="close">Закрити</button>
             <p class="author">Author</p>
             <p class="song">Song</p>
-            <p class="liric">Liric</p>`;
+            <p class="liric">Liric (Здесь должен быть текст...)</p>`;
 
             const close = document.querySelector('.close');
             close.addEventListener('click', () => {
