@@ -89,6 +89,7 @@ btn.forEach((item) => {
             <p class="song">Song: ${playList[0]['song']}</p>
             <p class="liric">Liric:  ${playList[0]['liric']}(Здесь должен быть текст...)</p>`;
 
+
             const close = document.querySelector('.close');
             close.addEventListener('click', () => {
     console.log('close');
@@ -103,6 +104,7 @@ btn.forEach((item) => {
         }
     })
     });
+
 });
 
 
